@@ -15,4 +15,4 @@ cmake \
     -D ANDROID_KEYSTORE_PASS=pass:"${KEYSTORE_PASS}" \
     -D CMAKE_BUILD_TYPE=${BUILD_TYPE} \
     ..
-cmake --build .
+cmake --build . -j"$(nproc)"

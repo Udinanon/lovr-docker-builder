@@ -17,7 +17,7 @@ Then choose what platform you want to start with
 
 1. Build the Docker container
 ```bash
-docker build -t lovr_linux.v2 -f linux/linuxBuilder.Dockerfile .
+docker build -t lovr_linux:v3 -f linux/linuxBuilder.Dockerfile .
 ```
 1. Check `build_linux.sh` for variables. 
 
@@ -32,7 +32,7 @@ Ensure you have a Java keystore ready. If you don't, look [here](https://lovr.or
 
 1. Build the Docker container
 ```bash
-docker build -t lovr_android.v2 -f android/androidBuilder.Dockerfile .
+docker build -t lovr_android:v2 -f android/androidBuilder.Dockerfile .
 ```
 1. Check `build_android.sh` for variables. 
 
