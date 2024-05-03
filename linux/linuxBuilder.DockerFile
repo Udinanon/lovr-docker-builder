@@ -3,7 +3,7 @@ FROM ubuntu:jammy
 # Added from docs: build-essential libcurl4-openssl-dev libxcb-glx0-dev libx11-xcb-dev glslang-tools     python3-minimal 
 RUN apt update
 RUN apt-get install -y --no-install-recommends \
-    build-essential \
+    make \
     cmake \
     python3-minimal \
     clang \
@@ -11,11 +11,14 @@ RUN apt-get install -y --no-install-recommends \
     libcurl4-openssl-dev \
     libxcb-glx0-dev \ 
     libx11-xcb-dev \
-    glslang-tools \
     && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     apt-get autoremove -y && \
     apt-get clean
+
+    # Set Compilers for CMake
+ENV CC=/usr/bin/clang
+ENV CXX=/usr/bin/clang++
 
 # Keeps container running without doing anything
 CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
