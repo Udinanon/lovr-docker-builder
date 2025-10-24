@@ -9,7 +9,7 @@ RUN apt update && \
     apt-get clean
 
 # Install Android SDK components
-RUN yes | sdkmanager --sdk_root=/opt/android-sdk/sdk "build-tools;34.0.0" "cmake;3.22.1" "ndk;21.4.7075529" "platform-tools" "platforms;android-29"
+RUN yes | sdkmanager --sdk_root=/opt/android-sdk/sdk "build-tools;34.0.0" "cmake;3.22.1" "ndk;26.3.11579264" "platform-tools" "platforms;android-29"
 
 # Keeps container running without doing anything
 CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
